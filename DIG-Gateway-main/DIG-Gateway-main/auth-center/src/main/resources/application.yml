@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+shuaicj.security.jwt.secret: Z9hf=na/XPBcmh&hAEH?Akts6pgqJsE)Kwr*Kk7B96sJCLzrA4XJWCqcHQPL
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/common
+    username: postgres
+    password: 19042001
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: create

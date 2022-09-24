@@ -1,0 +1,34 @@
+server:
+  port: 8082
+
+zuul:
+  routes:
+    auth-center:
+      path: /login/**
+      url: http://127.0.0.1:8081/
+      sensitiveHeaders: Cookie,Set-Cookie
+      stripPrefix: false
+
+    api-v1:
+      path: /v1/**
+      url: http://127.0.0.1:8080/
+      sensitiveHeaders: Cookie,Set-Cookie
+      stripPrefix: true
+
+shuaicj.security.jwt.secret: Z9hf=na/XPBcmh&hAEH?Akts6pgqJsE)Kwr*Kk7B96sJCLzrA4XJWCqcHQPL
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/common
+    username: postgres
+    password: 19042001
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: create
